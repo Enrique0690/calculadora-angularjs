@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="calculadoraApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora en AngularJS</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="CalculadoraController" ng-keypress="checarEnter($event)">
+    <div class="calculadora-contenedor">
+        <h1>Calculadora</h1>
+        <div class="calculadora">
+            <input type="text" class="resultado" ng-model="resultado" placeholder="0" ng-keydown="checarEnter($event)">
+            <div class="grid">
+                <button class="especial" ng-click="limpiar()">C</button>
+                <button class="operador" ng-click="agregar('/')">/</button>
+                <button class="operador" ng-click="agregar('*')">*</button>
+                <button class="operador restar" ng-click="agregar('-')">-</button>
+                <button class="numero" ng-click="agregar('7')">7</button>
+                <button class="numero" ng-click="agregar('8')">8</button>
+                <button class="numero" ng-click="agregar('9')">9</button>
+                <button class="operador suma" ng-click="agregar('+')">+</button>
+                <button class="numero" ng-click="agregar('4')">4</button>
+                <button class="numero" ng-click="agregar('5')">5</button>
+                <button class="numero" ng-click="agregar('6')">6</button>
+                <button class="numero" ng-click="agregar('1')">1</button>
+                <button class="numero" ng-click="agregar('2')">2</button>
+                <button class="numero" ng-click="agregar('3')">3</button>
+                <button class="especial calcular" ng-click="calcular()">=</button>
+                <button class="numero ancho" ng-click="agregar('0')">0</button>
+                <button class="numero punto" ng-click="agregar('.')">.</button>
+            </div>
+        </div>        
+    </div>
+</body>
+</html>
